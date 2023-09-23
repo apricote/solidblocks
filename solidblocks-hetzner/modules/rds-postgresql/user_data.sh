@@ -185,7 +185,7 @@ configure_ufw
 if [[ "$${SSL_ENABLE}" == "true" ]]; then
   lego_run_hook_script > ~rds/lego_run_hook.sh
   chmod +x ~rds/lego_run_hook.sh
-  lego_setup_dns "/storage/data/ssl" "$${SSL_EMAIL}" "$${SSL_DOMAINS}" "$${SSL_DNS_PROVIDER}" "$(readlink -f ~rds/lego_run_hook.sh)" "https://acme-staging-v02.api.letsencrypt.org/directory"
+  lego_setup_dns "/storage/data/ssl" "$${SSL_EMAIL}" "$${SSL_DOMAINS}" "$${SSL_DNS_PROVIDER}" "$(readlink -f ~rds/lego_run_hook.sh)" "https://acme-v02.api.letsencrypt.org/directory"
 fi
 
 mkdir -p "/opt/dockerfiles/${db_instance_name}"
